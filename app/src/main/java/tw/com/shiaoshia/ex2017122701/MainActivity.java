@@ -21,20 +21,19 @@ public class MainActivity extends AppCompatActivity {
         EditText ET1,ET2;
         ET1=(EditText) findViewById(R.id.editText);
         ET2=(EditText) findViewById(R.id.editText2);
-        double Num1=Double.valueOf(ET1.getText().toString());
-        double Num2=Double.valueOf(ET2.getText().toString());
-        double Sum=add(Num1,Num2);
+        double Sum=add(ET1.getText().toString(),ET2.getText().toString());
 
         TextView TV2;
         TV2=(TextView) findViewById(R.id.textView2);
         TV2.setText(String.valueOf(Sum));
     }
 
-    public static double add(double v1, double v2)
+    //public static double add(double v1, double v2)
+    public static double add(String v1, String v2)
     {
         //使用import java.math.BigDecimal;
-        BigDecimal b1 = new BigDecimal(Double.toString(v1));
-        BigDecimal b2 = new BigDecimal(Double.toString(v2));
+        BigDecimal b1 = new BigDecimal(v1);
+        BigDecimal b2 = new BigDecimal(v2);
         return b1.add(b2).doubleValue();
     }
 
